@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email Authentication
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sujinakp2014@gmail.com'
-EMAIL_HOST_PASSWORD = 'biysassfzfparkja'
+EMAIL_HOST_USER = 'emailid from which the mail has to be send'
+EMAIL_HOST_PASSWORD = 'password of the corresponding email'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
