@@ -1,0 +1,121 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "patientheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+               
+                
+                <th>test name</th>
+                
+          
+                <th>result</th>
+            
+            </tr>
+      
+    {% for ct in items %}  
+    <tr>
+      
+			
+			
+       
+       
+       <td>{{ ct.testname}}</td>
+    
+       <td>{{ ct.result}}</td>  
+       
+
+      
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+
+
+
+
+
+
+<br><br><br>
+<table id="customers">
+        <tr>
+           
+            
+            <th>doctor id</th>
+            
+      
+            <th>diagnosis</th>
+        
+        </tr>
+  
+{% for ct in items1 %}  
+<tr>
+  
+        
+        
+   
+   
+   <td>{{ ct.doctor_id}}</td>
+
+   <td>{{ ct.diagnosis}}</td>  
+   
+
+  
+       
+       
+        
+        
+        
+{% endfor %}
+</tr>
+</table> 
+
+<br>
+<table id="customers">
+        <tr>
+           
+            
+            <th>medicine name</th>
+            
+      
+            <th>dosage</th>
+            <th>rate</th>
+        </tr>
+  
+{% for ct in items2 %}  
+<tr>
+  
+        
+        
+   
+   
+   <td>{{ ct.medicinename}}</td>
+
+   <td>{{ ct.dosage}}</td>  
+   
+   <td>{{ ct.rate}}</td>  
+  
+       
+       
+        
+        
+        
+{% endfor %}
+
+</tr>
+</table> 
+    </form>
+    <br><br>
+    <center><a href="/confirm"><font size="4">verify</font></a></center>
+    </body>
+    </html>

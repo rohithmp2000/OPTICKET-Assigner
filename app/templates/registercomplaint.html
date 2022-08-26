@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'css4/form.css'%}">
+<div class="basic">
+  {% include "publicheader.html" %}
+</div>
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital.css' %}">
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/regcomplaint/">
+    {% csrf_token %}
+    <label for="patientid">Patient name</label>
+    <input type="text" name="patientid" placeholder=".." required>
+
+    <label for="complaint">Complaint</label>
+    <input type="text" name="complaint" placeholder=".." required>
+
+   
+
+    
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

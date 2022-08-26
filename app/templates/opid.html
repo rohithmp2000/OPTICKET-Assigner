@@ -1,0 +1,68 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "doctorheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>doctor_id</th>
+                <th>op_id</th>
+                <th>Dept_id</th>
+                <th>patient_id</th>
+                <th>status</th>
+                <th>op days</th>
+                <th>date</th>
+                <th>time</th>
+                <th>patient details</th>
+
+            
+            </tr>
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.doctor_id}}</td>    
+
+			
+			
+       <td>{{ ct.op_id}}</td>  
+       
+       
+       <td>{{ ct.dept_id}}</td>
+    
+       <td>{{ ct.patient_id}}</td>    
+
+			
+			
+       <td>{{ ct.status}}</td>  
+       
+       
+       <td>{{ ct.opday}}</td>
+
+       <td>{{ ct.date}}</td>
+
+       <td>{{ ct.time}}</td>
+
+
+    
+
+       
+       <td><a href="/patdetails/{{ct.patient_id}}">patient details </a></td>
+
+
+			
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>

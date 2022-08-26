@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+<div class="basic">
+  {% include "publicheader.html" %}
+</div>
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <script type="text/javascript">
+    function valid()
+    {
+if(f1.phone.value.length!=10)
+{
+  alert("phone number should be 10 digits....");
+  return false;
+}
+return true;
+
+    }
+    </script>
+    <style>
+    button{
+      background-color: rgb(20, 20, 20);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left:200px;
+    }
+    </style>
+</head>
+
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/regpatient/" name="f1" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    
+
+    <label for="name">Patient Name</label>
+    <input type="text" name="name" placeholder=".." required>
+    
+    <label for="age">Age</label>
+    <input type="number" name="age" placeholder=".." reuired>
+    <br> <br>
+
+    sex: &nbsp; &nbsp;
+    <input type="radio" name="gender" value="male" required>Male
+    <input type="radio" name="gender" value="female" required>Female
+    <input type="radio" name="gender" value="other" required>Other
+    <br> <br>
+
+    <label for="add">Patient Adress</label>
+    <input type="text" name="address" placeholder=".." required>
+
+    <label for="phone">Patient Phone Number</label>
+    <input type="number" name="phone" placeholder=".." required>
+    <br> <br>
+
+    <label for="Email">Email</label>
+    <input type="text" name="email" placeholder="Your patient name.." required>
+
+    <label for="photo">Patient Photo</label>
+    <input type="file" name="photo" placeholder=".." required>
+
+
+    <button onClick="return valid();">REGISTER</button>
+  </form>
+</div>
+
+</body>
+</html>

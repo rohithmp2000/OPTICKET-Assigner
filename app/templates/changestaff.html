@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "adminheader.html" %}
+    </div>
+    <script type="text/javascript">
+      function valid()
+      {
+  if(f1.phoneno.value.length!=10)
+  {
+    alert("phone number should be 10 digits....");
+    return false;
+  }
+  return true;
+  
+      }
+      </script>
+      <style>
+      button{
+        background-color: rgb(20, 20, 20);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left:200px;
+      }
+      </style>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/changestaff2/" name="f1">
+    {% csrf_token %}
+    <label for="name">Staff Id</label>
+    <input type="text" name="staff_id" value="{{items.staff_id}}" readonly>
+
+   
+
+    <label for="Phone">Phone</label>
+    <input type="text" name="phoneno" value="{{items.phoneno}}">
+    <br><br><br>
+
+    <label for="Email">Email</label>
+    <input type="text" name="email" value="{{items.email}}">
+
+
+  
+
+
+    <button onClick="return valid();">REGISTER</button>
+  </form>
+</div>
+
+</body>
+</html>

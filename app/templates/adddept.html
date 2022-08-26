@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "adminheader.html" %}
+    </div>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="post" action="/adddept1/">
+    {% csrf_token %}
+    <label for="name">Department Name</label>
+    <input type="text" name="deptname" required>
+
+    <label for="Desc">Description</label>
+    <input type="text" name="description" required>
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "adminheader.html" %}
+    </div>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/drallotment3/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="name">name</label>
+    <input type="text" name="name" value="{{items.name}}" readonly>
+
+    <label for="staff_id">staff id</label>
+    <input type="text" name="staff_id" value="{{items.staff_id}}" readonly>
+    <br><br>
+    <label for="Phone">Phone</label>
+    <input type="number" name="phoneno" value="{{items.phoneno}}" readonly>
+    <br><br><br>
+    <label for="department id">Department id</label>
+    <select name="department_id" >
+        <option value="">Please choose department</option>
+        {% for ct in data %}
+        <option value="{{ct.Dept_id}}">{{ct.Department}}</option>
+        {% endfor %}
+        </select>
+    <br><br><br>
+
+     <label for="photo">photo</label>
+    <input type="file" name="photo" >
+    <br><br><br>
+
+   
+  
+    <label for="Description">Description</label>
+    <textarea name="description" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

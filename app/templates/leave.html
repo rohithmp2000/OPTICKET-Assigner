@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "doctorheader.html" %}
+    </div>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/leave1/">
+    {% csrf_token %}
+    <label for="doctor id">doctor id</label>
+    <input type="text" name="doctor_id" value="{{uid}}" readonly>
+
+    <label for="date">date</label>
+    <input type="date" name="date"  >
+    <br><br>
+
+    <label for="days">days</label>
+    <input type="text" name="days"  >
+    <br><br><br>
+
+   
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

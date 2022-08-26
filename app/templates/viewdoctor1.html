@@ -1,0 +1,60 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "patientheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>doctor_id</th>
+                <th>name</th>
+               
+                <th>Description</th>
+                <th>photo</th>
+                
+                <th>view op days</th>
+            
+            </tr>
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.doctor_id}}</td>    
+
+			
+			
+       <td>{{ ct.name}}</td>  
+       
+       
+      
+    
+       <td>{{ ct.description}}</td>    
+
+			
+			
+       <td><img src="{{ ct.photo}}" width="100" height="100"></td>  
+       
+       
+   
+
+    
+
+       
+       <td><a href="/viewop1/{{ct.doctor_id}}">view opdays </a></td>
+
+
+			
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>

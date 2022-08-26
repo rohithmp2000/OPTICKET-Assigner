@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "patientheader.html" %}
+    </div>
+    <script>
+        function validation()
+        {
+        curDate = new Date();
+            enterDate = new Date(f1.date.value);
+            if(enterDate<curDate)
+            {
+              alert("Enter valid date");
+              f1.date.focus();
+              return false;
+            }
+            return true;
+            }
+        </script>
+        <style>
+            button{
+              background-color: rgb(20, 20, 20);
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left:200px;
+            }
+            </style>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/collectop1/" name="f1">
+    {% csrf_token %}
+
+    <label for="patientid">patient id</label>
+    <input type="text" name="patient_id" value="{{uid}}" readonly>
+    <br><br>
+
+    <label for="department id">department id</label>
+    <input type="text" name="dept_id"  value="{{items.dept_id}}" readonly>
+    <br><br><br>
+
+    <label for="doctor id">doctor id</label>
+    <input type="text" name="doctor_id" value="{{items.doctor_id}}" readonly>
+
+
+    <label for="op day">op day</label>
+    <input type="text" name="opday" value="{{items.days}}" readonly>
+
+
+    Date <input type="date" name="date" required>
+    <br><br><br>
+
+    Time<input type="time" name="time" required>
+    <br><br><br>
+
+
+
+    <button onclick="return validation();">ok</button>
+  </form>
+</div>
+
+</body>
+</html>

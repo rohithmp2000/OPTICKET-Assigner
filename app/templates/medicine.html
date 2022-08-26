@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "doctorheader.html" %}
+    </div>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/medicine1/">
+    {% csrf_token %}
+    <label for="medicine id">patient id id</label>
+    <input type="text" name="patient_id"  value="{{ptid}}" readonly>
+    <label for="medicine id">medicine id</label>
+    <input type="text" name="medicine_id"  >
+
+    <label for="diagnosis id">diagnosis_id</label>
+    <input type="text" name="diagnosis_id" value="{{did}}" readonly>
+    <br><br>
+
+    <label for="medicine name">medicine name</label>
+    <input type="text" name="medicinename"  >
+    <br><br><br>
+
+    <label for="dosage">dosage</label>
+    <input type="text" name="dosage"  >
+    <br><br>
+
+    <label for="rate">rate</label>
+    <input type="text" name="rate" >
+    <br><br><br>
+
+   
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

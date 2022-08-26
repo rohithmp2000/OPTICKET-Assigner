@@ -1,0 +1,44 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "adminheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>Dept_id</th>
+                <th>Department</th>
+                <th>Description</th>
+                <th>remove</th>
+            </tr>
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.Dept_id}}</td>    
+
+			
+			
+       <td>{{ ct.Department}}</td>  
+       
+       
+       <td>{{ ct.Description}}</td>
+       
+
+       <td><a href="/remove_dept1/{{ ct.id }}">remove</a></td>
+
+			
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>

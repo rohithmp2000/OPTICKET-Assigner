@@ -1,0 +1,45 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "patientheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>Doctor_id</th>
+                <th>Department id</th>
+                <th>days</th>
+                <th>-----</th>
+               
+            </tr> 
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.doctor_id}}</td>    
+
+			
+			
+       <td>{{ ct.dept_id}}</td>  
+       
+       
+       <td>{{ ct.days}}</td>
+
+
+
+       <td><a href="/collectop/{{ct.id}}">Collect Opticket</a></td>
+
+    
+      
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>

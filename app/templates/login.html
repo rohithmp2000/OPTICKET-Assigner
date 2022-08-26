@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'css4/form.css'%}">
+<div class="basic">
+  {% include "publicheader.html" %}
+</div>
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital2.css' %}">
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/login2/">
+    {% csrf_token %}
+    <label for="patientid">User name</label>
+    <input type="text" name="username" placeholder="" required>
+
+    <label for="complaint">Password</label>
+    <input type="password" name="password" placeholder=".." required>
+
+    
+    
+
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "labheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>patient_id</th>
+                <th>op_id</th>
+                <th>test name</th>
+                
+                <th>-----</th>
+              
+            
+            </tr>
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.patient_id}}</td>    
+
+			
+			
+       <td>{{ ct.op_id}}</td>  
+       
+       
+       <td>{{ ct.testname}}</td>
+    
+      
+
+       <td><a href="/viewtest1/{{ct.id}}">result </a></td>
+
+
+			
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>

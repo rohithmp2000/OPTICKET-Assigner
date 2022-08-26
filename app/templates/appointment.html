@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "adminheader.html" %}
+    </div>
+    <script type="text/javascript">
+      function valid()
+      {
+  if(f1.phoneno.value.length!=10)
+  {
+    alert("phone number should be 10 digits....");
+    return false;
+  }
+  return true;
+  
+      }
+      </script>
+      <style>
+      button{
+        background-color: rgb(20, 20, 20);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left:200px;
+      }
+      </style>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/staffappoint/" name="f1">
+    {% csrf_token %}
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Your name.." required>
+
+    <label for="Address">Address</label>
+    <input type="text" name="address" placeholder="Your last Address.." required>
+    <br><br>
+
+    <label for="Phone">Phone</label>
+    <input type="number" name="phoneno" placeholder="Your Phone number.." required>
+    <br><br><br>
+
+    <label for="Email">Email</label>
+    <input type="email" name="email" placeholder="Your Email Address.." required>
+
+
+    Gender: <br><br>
+    <input type="radio" name="Gender" value="male" required>male
+    <input type="radio" name="Gender" value="female" required>female
+    <input type="radio" name="Gender" value="other" required>other
+    <br><br><br>
+
+    <label for="Category">Category</label>
+    <select id="Category" name="category" required>
+      <option value="doctor">Doctor</option>
+      <option value="labstaff">labstaff</option>
+    </select>
+    <br><br><br>
+
+    DOJ<input type="date" name="doj" required>
+    <br><br><br>
+
+
+    <label for="age">age</label>
+    <input type="number" name="age" required>
+    <br><br><br>
+
+    <label for="remark">remark</label>
+    <textarea name="remark" placeholder="Write something.." style="height:200px"></textarea>
+
+    <button onClick="return valid();">REGISTER</button>
+  </form>
+</div>
+
+</body>
+</html>

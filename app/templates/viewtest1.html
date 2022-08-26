@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="{% static 'images/hospital1.css' %}">
+    <div class="basic">
+      {% include "labheader.html" %}
+    </div>
+</head>
+<body>
+  
+  
+<br><br><br><br>
+<div class="container">
+  <img src="{% static 'images/hs.jpg' %}"height="200px" width="550px">
+  <form method="POST" action="/viewtest2/{{items.id}}">
+    {% csrf_token %}
+  
+    <label for="test name">test name</label>
+    <input type="text" name="testname" value="{{items.testname}}" readonly>
+    <br><br>
+
+    <label for="patient_id">result</label>
+    <input type="file" name="result" required>
+    <br><br><br>
+
+    
+   
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

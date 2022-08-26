@@ -1,0 +1,47 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "adminheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>patient id</th>
+                <th>complaint</th>
+                <th>complaint date</th>
+                
+            </tr> 
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.patient_id}}</td>    
+
+			
+			
+       <td>{{ ct.complaint}}</td>  
+       
+       
+       <td>{{ ct.complaint_date}}</td>
+
+
+       
+       
+
+    
+
+			
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>

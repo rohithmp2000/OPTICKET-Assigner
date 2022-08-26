@@ -1,0 +1,63 @@
+<html>
+    <head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <div class="basic">
+    {% include "adminheader.html" %}
+  </div>
+    </head>
+    <body>
+        <table id="customers">
+            <tr>
+                <th>patient_id</th>
+                <th>name</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>address</th>
+                <th>phone no</th>
+                <th>email</th>
+                <th>photo</th>
+              
+            
+            </tr>
+      
+    {% for ct in items %}  
+    <tr>
+       <td>{{ ct.patient_id}}</td>    
+
+			
+			
+       <td>{{ ct.name}}</td>  
+       
+       
+       <td>{{ ct.age}}</td>
+    
+       <td>{{ ct.gender}}</td>    
+
+			
+			
+       <td>{{ ct.address}}</td>  
+       
+       
+       <td>{{ ct.phone_no}}</td>
+
+       <td>{{ ct.email}}</td>
+
+       <td><img src="{{ ct.photo}}" width="100" height="100"</td>
+
+     
+
+
+			
+           
+           
+            
+            
+            
+    {% endfor %}
+</tr>
+</table>     
+
+    </form>
+    </body>
+    </html>
